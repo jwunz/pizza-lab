@@ -1,31 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="styles/style.css" rel="stylesheet" />
-        <title>Pizza App</title>
-    </head>
-    <body>
-        <div class="pizza-content" id="pizza">
-            <div class="pizza-side">
-                <div class="pizza-preview"></div>
-                <div class="reciept-preview">
-                    <div class="items"></div>
-                    <div class="total"></div>
+
+<head>
+    <link href="styles/style.css" rel="stylesheet" />
+    <title>Pizza App</title>
+</head>
+
+<body>
+    <div class="pizza-content" id="pizza">
+        <div class="pizza-side">
+            <div class="pizza-preview"></div>
+            <div class="reciept-preview">
+                <div class="items">
+                    <ul class="itemized"></ul>
                 </div>
-            </div>
-            <div class="menu-side">
-                <div class="menu-tabs">
-                    <div class="starters-tab">Starters</div>
-                    <div class="toppings-tab">Toppings</div>
-                </div>
-                <div class="premade-menu"></div>
-                <div class="sizes-menu"></div>
-                <div class="sauce-menu"></div>
-                <div class="cheese-menu"></div>
+                <div class="total"></div>
             </div>
         </div>
-    </body>
-    <footer>
-        <script src="scripts/script.js"></script>
-    </footer>
+        <div class="menu-side">
+            <div class="menu-tabs">
+                <div class="menu-tab starters-tab">Starters</div>
+                <div class="menu-tab toppings-tab">Toppings</div>
+            </div>
+            <div class="menu-section preset-menu">
+                <div class="menu-section-header">Preset Pizzas</div>
+            </div>
+            <div class="menu-section sizes-menu">
+                <div class="menu-section-header">Crust Size</div>
+                <div class="menu-section-content">
+                    <div class="crust-size personal">
+                        <div class="size-text">Personal</div>
+                    </div>
+                    <div class="crust-size small">
+                        <div class="size-text">Small</div>
+                    </div>
+                    <div class="crust-size medium">
+                        <div class="size-text">Medium</div>
+                    </div>
+                    <div class="crust-size large">
+                        <div class="size-text">Large</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-section sauce-menu">
+                <div class="menu-section-header">Sauce</div>
+                <div class="menu-section-content">
+
+                </div>
+            </div>
+            <div class="menu-section cheese-menu">
+                <div class="menu-section-header">Cheese</div>
+                <div class="menu-section-content">
+
+                </div>
+            </div>
+            <div class="menu-section toppings-menu">
+                <div class="menu-section-header">Toppings</div>
+                <div class="menu-section-content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="scripts/script.js"></script>
+</footer>
+
 </html>

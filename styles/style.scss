@@ -8,6 +8,13 @@
     max-width: $width;
 }
 
+@mixin one-to-one-height-width ($height) {
+    min-height: $height;
+    min-width: $height;
+    max-height: $height;
+    max-width: $height;
+}
+
 * {
     border: 1px solid black;
     padding: 5px;
@@ -26,24 +33,25 @@ html, body {
     justify-content: center;
     align-content: stretch;
     min-height: 100%;
+    width: 100%;
 }
 
 .pizza-side {
     @include flex-height(100%);
-    @include flex-width(67%);
+    flex-grow: 1;
 }
 
 .pizza-preview {
     $pizza-diameter: 70%;
     @include flex-width($pizza-diameter);
     padding-bottom: $pizza-diameter;
-    margin: auto;
+    margin: 5px auto;
     border-radius: 100%;
 }
 
 .menu-side {
     min-height: 100%;
-    width: 33%;
+    width: 600px;
     display: flex;
     flex-direction: column;
     align-content: stretch;
@@ -57,9 +65,58 @@ html, body {
     justify-content: stretch;
 }
 
-.starters-tab, .toppings-tab {
+.menu-tab {
     width: 50%;
     text-align: center;
+    cursor: pointer;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+}
+
+.menu-section-header {
+    text-align: center;
+}
+
+.menu-section-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+.sizes-menu>.menu-section-content {
+    align-items: center;
+}
+
+.crust-size {
+    border: 2px solid black;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    &.personal {
+        @include one-to-one-height-width(65px);
+    }
+    &.small {
+        @include one-to-one-height-width(80px);
+    }
+    &.medium {
+        @include one-to-one-height-width(90px);
+    }
+    &.large {
+        @include one-to-one-height-width(100px);
+    }
+}
+
+.size-text {
+    margin: auto;
 }
 
 @media only screen and (max-device-width: 480px) {

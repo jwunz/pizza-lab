@@ -31,7 +31,7 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-content: stretch;
+    align-items: stretch;
     min-height: 100%;
     width: 100%;
 }
@@ -54,7 +54,7 @@ html, body {
     width: 600px;
     display: flex;
     flex-direction: column;
-    align-content: stretch;
+    align-items: stretch;
     justify-content: flex-start;
 }
 
@@ -86,7 +86,7 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-content: flex-start;
+    align-items: flex-start;
 }
 
 .sizes-menu>.menu-section-content {
@@ -99,7 +99,7 @@ html, body {
     text-align: center;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 
     &.personal {
         @include one-to-one-height-width(65px);

@@ -10,17 +10,21 @@
 
 * {
     border: 1px solid black;
+    padding: 5px;
 }
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    border: none;
 }
 
-.page-content {
+.pizza-content {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-content: stretch;
     min-height: 100%;
 }
 
@@ -40,9 +44,25 @@ html, body {
 .menu-side {
     min-height: 100%;
     width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: flex-start;
 }
 
-@media only screen and (min-device-width: 480px) {
+.menu-tabs {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: stretch;
+}
+
+.starters-tab, .toppings-tab {
+    width: 50%;
+    text-align: center;
+}
+
+@media only screen and (max-device-width: 480px) {
     .page-content{
          flex-direction: column;
     }

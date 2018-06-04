@@ -1,92 +1,106 @@
-[
-    {
-        "name": "Bacon",
-        "regular": "bacon_regular.png",
-        "regular-left": "bacon_regular_left.png",
-        "regular-right": "bacon_regular_right.png",
-        "extra": "bacon_extra.png",
-        "extra-left": "bacon_extra_left.png",
-        "extra-right": "bacon_extra_right.png"
-    },
-    {
-        "name": "Beef",
-        "regular": "beef_regular.png",
-        "regular-left": "beef_regular_left.png",
-        "regular-right": "beef_regular_right.png",
-        "extra": "beef_extra.png",
-        "extra-left": "beef_extra_left.png",
-        "extra-right": "beef_extra_right.png"
-    },
-    {
-        "name": "Bell Pepper",
-        "regular": "bell_pepper_regular.png",
-        "regular-left": "bell_pepper_regular_left.png",
-        "regular-right": "bell_pepper_regular_right.png",
-        "extra": "bell_pepper_extra.png",
-        "extra-left": "bell_pepper_extra_left.png",
-        "extra-right": "bell_pepper_extra_right.png"
-    },
-    {
-        "name": "Chicken",
-        "regular": "chicken_regular.png",
-        "regular-left": "chicken_regular_left.png",
-        "regular-right": "chicken_regular_right.png",
-        "extra": "chicken_extra.png",
-        "extra-left": "chicken_extra_left.png",
-        "extra-right": "chicken_extra_right.png"
-    },
-    {
-        "name": "Ham",
-        "regular": "ham_regular.png",
-        "regular-left": "ham_regular_left.png",
-        "regular-right": "ham_regular_right.png",
-        "extra": "ham_extra.png",
-        "extra-left": "ham_extra_left.png",
-        "extra-right": "ham_extra_right.png"
-    },
-    {
-        "name": "jalape&ntilde;o",
-        "regular": "jalapeno_regular.png",
-        "regular-left": "jalapeno_regular_left.png",
-        "regular-right": "jalapeno_regular_right.png",
-        "extra": "jalapeno_extra.png",
-        "extra-left": "jalapeno_extra_left.png",
-        "extra-right": "jalapeno_extra_right.png"
-    },
-    {
-        "name": "Mushroom",
-        "regular": "mushrooms_regular.png",
-        "regular-left": "mushrooms_regular_left.png",
-        "regular-right": "mushrooms_regular_right.png",
-        "extra": "mushrooms_extra.png",
-        "extra-left": "mushrooms_extra_left.png",
-        "extra-right": "mushrooms_extra_right.png"
-    },
-    {
-        "name": "Black Olive",
-        "regular": "black_olive_regular.png",
-        "regular-left": "black_olive_regular_left.png",
-        "regular-right": "black_olive_regular_right.png",
-        "extra": "black_olive_extra.png",
-        "extra-left": "black_olive_extra_left.png",
-        "extra-right": "black_olive_extra_right.png"
-    },
-    {
-        "name": "Pepperoni",
-        "regular": "pepperoni_regular.png",
-        "regular-left": "pepperoni_regular_left.png",
-        "regular-right": "pepperoni_regular_right.png",
-        "extra": "pepperoni_extra.png",
-        "extra-left": "pepperoni_extra_left.png",
-        "extra-right": "pepperoni_extra_right.png"
-    },
-    {
-        "name": "Red Pepper",
-        "regular": "red_pepper_regular.png",
-        "regular-left": "red_pepper_regular_left.png",
-        "regular-right": "red_pepper_regular_right.png",
-        "extra": "red_pepper_extra.png",
-        "extra-left": "red_pepper_extra_left.png",
-        "extra-right": "red_pepper_extra_right.png"
-    }
-]
+{
+    "toppings": [
+        {
+            "name": "Bacon",
+            "regular": "bacon_regular.png",
+            "regular-left": "bacon_regular_left.png",
+            "regular-right": "bacon_regular_right.png",
+            "extra": "bacon_extra.png",
+            "extra-left": "bacon_extra_left.png",
+            "extra-right": "bacon_extra_right.png"
+        },
+        {
+            "name": "Beef",
+            "regular": "beef_regular.png",
+            "regular-left": "beef_regular_left.png",
+            "regular-right": "beef_regular_right.png",
+            "extra": "beef_extra.png",
+            "extra-left": "beef_extra_left.png",
+            "extra-right": "beef_extra_right.png"
+        },
+        {
+            "name": "Bell Pepper",
+            "regular": "bell_pepper_regular.png",
+            "regular-left": "bell_pepper_regular_left.png",
+            "regular-right": "bell_pepper_regular_right.png",
+            "extra": "bell_pepper_extra.png",
+            "extra-left": "bell_pepper_extra_left.png",
+            "extra-right": "bell_pepper_extra_right.png"
+        },
+        {
+            "name": "Chicken",
+            "regular": "chicken_regular.png",
+            "regular-left": "chicken_regular_left.png",
+            "regular-right": "chicken_regular_right.png",
+            "extra": "chicken_extra.png",
+            "extra-left": "chicken_extra_left.png",
+            "extra-right": "chicken_extra_right.png"
+        },
+        {
+            "name": "Ham",
+            "regular": "ham_regular.png",
+            "regular-left": "ham_regular_left.png",
+            "regular-right": "ham_regular_right.png",
+            "extra": "ham_extra.png",
+            "extra-left": "ham_extra_left.png",
+            "extra-right": "ham_extra_right.png"
+        },
+        {
+            "name": "jalape&ntilde;o",
+            "regular": "jalapeno_regular.png",
+            "regular-left": "jalapeno_regular_left.png",
+            "regular-right": "jalapeno_regular_right.png",
+            "extra": "jalapeno_extra.png",
+            "extra-left": "jalapeno_extra_left.png",
+            "extra-right": "jalapeno_extra_right.png"
+        },
+        {
+            "name": "Mushroom",
+            "regular": "mushrooms_regular.png",
+            "regular-left": "mushrooms_regular_left.png",
+            "regular-right": "mushrooms_regular_right.png",
+            "extra": "mushrooms_extra.png",
+            "extra-left": "mushrooms_extra_left.png",
+            "extra-right": "mushrooms_extra_right.png"
+        },
+        {
+            "name": "Black Olive",
+            "regular": "black_olive_regular.png",
+            "regular-left": "black_olive_regular_left.png",
+            "regular-right": "black_olive_regular_right.png",
+            "extra": "black_olive_extra.png",
+            "extra-left": "black_olive_extra_left.png",
+            "extra-right": "black_olive_extra_right.png"
+        },
+        {
+            "name": "Pepperoni",
+            "regular": "pepperoni_regular.png",
+            "regular-left": "pepperoni_regular_left.png",
+            "regular-right": "pepperoni_regular_right.png",
+            "extra": "pepperoni_extra.png",
+            "extra-left": "pepperoni_extra_left.png",
+            "extra-right": "pepperoni_extra_right.png"
+        },
+        {
+            "name": "Red Pepper",
+            "regular": "red_pepper_regular.png",
+            "regular-left": "red_pepper_regular_left.png",
+            "regular-right": "red_pepper_regular_right.png",
+            "extra": "red_pepper_extra.png",
+            "extra-left": "red_pepper_extra_left.png",
+            "extra-right": "red_pepper_extra_right.png"
+        }
+    ],
+    "crust": [
+        {
+            "name": "Regular Crust",
+            "image": "regular_crust.png"
+        }
+    ],
+    "cheese": [
+        {
+            "name": "Mozzerella",
+            "image": "mozzerella.png"
+        }
+    ]
+}

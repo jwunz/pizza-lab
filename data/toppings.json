@@ -51,7 +51,7 @@
             "extra-right": "ham_extra_right.png"
         },
         {
-            "name": "jalape&ntilde;o",
+            "name": "Jalape&ntilde;o",
             "thumbnail": "",
             "regular": "jalapeno_regular.png",
             "regular-left": "jalapeno_regular_left.png",
@@ -82,7 +82,7 @@
         },
         {
             "name": "Pepperoni",
-            "thumbnail": "",
+            "thumbnail": "pepperoni_thumbnail.png",
             "regular": "pepperoni_regular.png",
             "regular-left": "pepperoni_regular_left.png",
             "regular-right": "pepperoni_regular_right.png",
@@ -111,6 +111,42 @@
         {
             "name": "Mozzerella",
             "image": "mozzerella.png"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Pepperoni",
+            "cheese": "regular",
+            "toppings": [
+                "pepperoni"
+            ]
+        },
+        {
+            "name": "Cheese",
+            "cheese": "extra",
+            "toppings": []
+        },
+        {
+            "name": "Carnivore",
+            "cheese": "regular",
+            "toppings": [
+                "pepperoni",
+                "bacon",
+                "beef",
+                "chicken",
+                "ham"
+            ]
+        },
+        {
+            "name": "Rabbit Food",
+            "cheese": "regular",
+            "toppings": [
+                "bell-pepper",
+                "jalepeno",
+                "mushrooms",
+                "olive",
+                "red-pepper"
+            ]
         }
     ]
 }

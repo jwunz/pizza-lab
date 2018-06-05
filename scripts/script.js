@@ -24,7 +24,7 @@ function loadComplete(evt){
     toppingContent = JSON.parse(request.responseText);
     toppings = toppingContent.toppings;
     for(i = 0; i < toppings.length; i++) {
-        toppingMenuContent.innerHTML += '<div class="topping"> <img class="topping-img" src="../images/' + toppings[i].thumbnail + '"/> <div class="topping-text">' + toppings[i].name + '</div> <div class="half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div> </div > ';
+        toppingMenuContent.innerHTML += '<div class="topping"> <div class="topping-display"> <img class="topping-img" src="../images/' + toppings[i].thumbnail + '"/>  <div class="topping-text">' + toppings[i].name + '</div> </div> <div class="topping-controls"> <div class="half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div> </div> </div > ';
     }
     console.log(toppings);
 }

@@ -125,7 +125,14 @@ html, body {
 }
 
 .topping {
-    @include flex-width(200px)
+    @include flex-width(200px);
+    display: flex;
+    flex-direction: row;
+}
+
+.topping-controls {
+    display: flex;
+    flex-direction: column;
 }
 
 .topping-img {
@@ -141,29 +148,38 @@ html, body {
 
 .half-or-whole {
     border: 2px solid black;
-    height: 15px;
+    height: 20px;
+    padding: 0;
 }
 
 .half-selection-container {
     display: flex;
     flex-direction: row;
     align-content: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .left-half-btn {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    width: 7px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 10px;
 }
 .whole-btn {
     border-radius: 100%;
-    width: 15px;
+    width: 20px;
 }
 .right-half-btn {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    width: 7px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 10px;
+}
+
+.cheese-menu>.menu-section-content {
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
 }
 
 @media only screen and (max-device-width: 480px) {

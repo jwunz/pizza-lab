@@ -57,15 +57,33 @@ function showStarters(evt) {
 
 function activateHalf(evt) {
     if(!evt.target.classList.contains('active')){
-        if(evt.target.parentElement.classList.contains('regular-half-selection-container')){
-            
+        if(evt.target.parentElement.classList.contains('regular-half-selection-container')) {
+            deactivateArray(evt.target.parentElement.parentElement.children[3].children);
+        } 
+        else if (evt.target.parentElement.classList.contains('extra-half-selection-container')) {
+            if (evt.target.classList.contains('whole-btn')) {
+                console.log(evt.target.parentElement.parentElement.children[1].children);
+                deactivateArray(evt.target.parentElement.parentElement.children[1].children);
+            }
         }
 
-        for(var i = 0; i < evt.target.parentElement.children.length; i++){
-            evt.target.parentElement.children[i].classList.remove('active');
-        }
-        evt.target.classList.add('active');
+        deactivateArray(evt.target.parentElement.children);
+        activate(evt.target);
     } else {
-        evt.target.classList.remove('active');
+        deactivate(evt.target);
+    }
+}
+
+function activate(element) {
+    element.classList.add('active');
+}
+
+function deactivate(element) {
+    element.classList.remove('active');
+}
+
+function deactivateArray(arr){
+    for(var i = 0; i < arr.length; i++){
+        deactivate(arr[i]);
     }
 }

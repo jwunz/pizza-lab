@@ -4,6 +4,7 @@ var startersTab = document.getElementById('starters-tab');
 var toppingTab = document.getElementById('topping-tab');
 var toppingMenu = document.getElementById("topping-menu");
 var toppingMenuContent = document.getElementById("toppings-menu-content");
+var halfSelectors
 
 toppingTab.onclick = showToppings;
 startersTab.onclick = showStarters;
@@ -26,7 +27,12 @@ function loadComplete(evt){
     for(i = 0; i < toppings.length; i++) {
         toppingMenuContent.innerHTML += '<div class="topping"> <div class="topping-display"> <img class="topping-img" src="../images/' + toppings[i].thumbnail + '"/>  <div class="topping-text">' + toppings[i].name + '</div> </div> <div class="topping-controls"> <div>Regular</div> <div class="half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div><div>Extra</div> <div class="half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div> </div> </div > ';
     }
-    console.log(toppings);
+
+    halfSelectors = document.getElementsByClassName('half-or-whole');
+
+    for(var i = 0; i < halfSelectors.length; i++) {
+        halfSelectors[i].onclick = activateHalf;
+    }
 }
 
 
@@ -38,11 +44,21 @@ function addTopping(){
 }
 
 function showToppings(evt) {
-    starters.style.display = 'none';
-    toppingMenu.style.display = 'flex';
+    starters.classList.add('hidden');
+    toppingMenu.classList.remove('hidden');
 }
 
 function showStarters(evt) {
-    starters.style.display = 'flex';
-    toppingMenu.style.display = 'none';
+    starters.classList.remove('hidden');
+    toppingMenu.classList.add('hidden');
+}
+
+function activateHalf(evt) {
+    console.log(evt.target);
+    if(!evt.target.classList.contains('active')){
+        evt.target.classList.add('active');
+    } else {
+        evt.target.classList.remove('active');
+    }
+    console.log(evt.target);
 }

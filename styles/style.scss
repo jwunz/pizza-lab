@@ -159,8 +159,9 @@ html, body {
     height: 20px;
     padding: 0;
     margin: 5px;
+    cursor: pointer;
 
-    &>.active {
+    &.active {
         background-color: black;
     }
 }

@@ -130,6 +130,8 @@ html, body {
 
 .toppings-menu>.menu-section-content {
     flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 450px;
 }
 
 .topping {

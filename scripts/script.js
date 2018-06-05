@@ -6,6 +6,9 @@ var pizzaSideContainers = ['pizza-preview', 'receipt-preview'];
 var menuSideContainers = ['starters', 'toppings'];
 var startersContainers = ['pizza-size', 'sauces'];
 var containers = [];
+var toppingMenuContent = document.getElementById("toppings-menu-content");
+
+var toppings;
 
 forEach(containerNames,container,buildContainer);
 var pizzaSides = document.getElementsByClassName("pizza-side")[0];
@@ -130,9 +133,12 @@ function loadData(){
     request.send();
 }
 function loadComplete(evt){
-    console.log('Fuck You');
     toppingContent = JSON.parse(request.responseText);
-    console.log(toppingContent);
+    toppings = toppingContent.toppings;
+    for(i = 0; i < toppings.length; i++) {
+        toppingMenuContent.innerHTML += '<div class="topping"> <img class="topping-img" src="../images/' + toppings[i].thumbnail + '"/> <div class="topping-text">' + toppings[i].name + '</div> <div class="half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div> </div > ';
+    }
+    console.log(toppings);
 }
 
 

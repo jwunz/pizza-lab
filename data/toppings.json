@@ -12,7 +12,7 @@
         },
         {
             "name": "Beef",
-            "thumbnail": "",
+            "thumbnail": "beef_thumbnail.png",
             "regular": "beef_regular.png",
             "regular-left": "beef_regular_left.png",
             "regular-right": "beef_regular_right.png",
@@ -22,7 +22,7 @@
         },
         {
             "name": "Bell Pepper",
-            "thumbnail": "",
+            "thumbnail": "bell_pepper_thumbnail.png",
             "regular": "bell_pepper_regular.png",
             "regular-left": "bell_pepper_regular_left.png",
             "regular-right": "bell_pepper_regular_right.png",
@@ -32,7 +32,7 @@
         },
         {
             "name": "Chicken",
-            "thumbnail": "",
+            "thumbnail": "chicken_thumbnail.png",
             "regular": "chicken_regular.png",
             "regular-left": "chicken_regular_left.png",
             "regular-right": "chicken_regular_right.png",
@@ -42,7 +42,7 @@
         },
         {
             "name": "Ham",
-            "thumbnail": "",
+            "thumbnail": "ham_thumbnail.png",
             "regular": "ham_regular.png",
             "regular-left": "ham_regular_left.png",
             "regular-right": "ham_regular_right.png",
@@ -52,7 +52,7 @@
         },
         {
             "name": "Jalape&ntilde;o",
-            "thumbnail": "",
+            "thumbnail": "jalapeno_thumbnail.png",
             "regular": "jalapeno_regular.png",
             "regular-left": "jalapeno_regular_left.png",
             "regular-right": "jalapeno_regular_right.png",
@@ -62,7 +62,7 @@
         },
         {
             "name": "Mushroom",
-            "thumbnail": "",
+            "thumbnail": "mushrooms_thumbnail.png",
             "regular": "mushrooms_regular.png",
             "regular-left": "mushrooms_regular_left.png",
             "regular-right": "mushrooms_regular_right.png",
@@ -72,7 +72,7 @@
         },
         {
             "name": "Black Olive",
-            "thumbnail": "",
+            "thumbnail": "olives_thumbnail.png",
             "regular": "black_olive_regular.png",
             "regular-left": "black_olive_regular_left.png",
             "regular-right": "black_olive_regular_right.png",
@@ -92,7 +92,7 @@
         },
         {
             "name": "Red Pepper",
-            "thumbnail": "",
+            "thumbnail": "red_pepper_thumbnail.png",
             "regular": "red_pepper_regular.png",
             "regular-left": "red_pepper_regular_left.png",
             "regular-right": "red_pepper_regular_right.png",

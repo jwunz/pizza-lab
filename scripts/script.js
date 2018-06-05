@@ -4,16 +4,20 @@ var startersTab = document.getElementById('starters-tab');
 var toppingTab = document.getElementById('topping-tab');
 var toppingMenu = document.getElementById("topping-menu");
 var toppingMenuContent = document.getElementById("toppings-menu-content");
+var pizzaPreview = document.getElementsByClassName('pizza-preview')[0];
 var halfSelectors;
 var halfSelectorContainers;
+var activePizzaToppings;
 
 toppingTab.onclick = showToppings;
 startersTab.onclick = showStarters;
 
 var toppings;
 var toppingContent;
+var crust;
 var request = new XMLHttpRequest();
 loadData();
+
 
 
 function loadData(){
@@ -24,10 +28,13 @@ function loadData(){
 function loadComplete(evt){
     toppingContent = JSON.parse(request.responseText);
     toppings = toppingContent.toppings;
+    crust = toppingContent.crust[0];
     for(i = 0; i < toppings.length; i++) {
         toppingMenuContent.innerHTML += `<div class="topping ${toppings[i].name}"> <div class="topping-display"> <img class="topping-img" src="../images/${toppings[i].thumbnail}"/>  <div class="topping-text">${toppings[i].name}</div> </div> <div class="topping-controls"> <div class="topping-control-label">Regular</div> <div class="half-selection-container regular-half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div><div class="topping-control-label">Extra</div> <div class="half-selection-container extra-half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div> </div> </div >`;
     }
-
+    
+    pizzaPreview.style.background = `url(../images/${crust.image[0]}) no-repeat, url(../images/${crust.image[1]}) no-repeat`;
+    pizzaPreview.style.backgroundSize = 'cover';
     halfSelectors = document.getElementsByClassName('half-or-whole');
     halfSelectorContainers = document.getElementsByClassName('half-selection-container');
 
@@ -37,7 +44,7 @@ function loadComplete(evt){
 }
 
 
-function addTopping(){
+function addTopping(evt){
     removeSimilarToppings(evt);
     activePizzaToppings.unshift(`url(../images/${evt}.png) no-repeat`);
     pizzaPreview.style.background = activePizzaToppings + ", url(../images/regular_crust.png) no-repeat, url(../images/crust_background.png) no-repeat";

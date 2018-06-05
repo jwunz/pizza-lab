@@ -104,7 +104,8 @@
     "crust": [
         {
             "name": "Regular Crust",
-            "image": "regular_crust.png"
+            "image": ["regular_crust.png",
+                "crust_background.png"]
         }
     ],
     "cheese": [

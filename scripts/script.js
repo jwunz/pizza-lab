@@ -26,7 +26,7 @@ function loadComplete(evt){
     toppingContent = JSON.parse(request.responseText);
     toppings = toppingContent.toppings;
     for(i = 0; i < toppings.length; i++) {
-        toppingMenuContent.innerHTML += '<div class="topping"> <div class="topping-display"> <img class="topping-img" src="../images/' + toppings[i].thumbnail + '"/>  <div class="topping-text">' + toppings[i].name + '</div> </div> <div class="topping-controls"> <div>Regular</div> <div class="half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div><div>Extra</div> <div class="half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div> </div> </div > ';
+        toppingMenuContent.innerHTML += '<div class="topping"> <div class="topping-display"> <img class="topping-img" src="../images/' + toppings[i].thumbnail + '"/>  <div class="topping-text">' + toppings[i].name + '</div> </div> <div class="topping-controls"> <div class="topping-control-label">Regular</div> <div class="half-selection-container regular-half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div><div class="topping-control-label">Extra</div> <div class="half-selection-container extra-half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div> </div> </div > ';
     }
 
     halfSelectors = document.getElementsByClassName('half-or-whole');
@@ -56,8 +56,11 @@ function showStarters(evt) {
 }
 
 function activateHalf(evt) {
-    console.log(evt);
     if(!evt.target.classList.contains('active')){
+        if(evt.target.parentElement.classList.contains('regular-half-selection-container')){
+            
+        }
+
         for(var i = 0; i < evt.target.parentElement.children.length; i++){
             evt.target.parentElement.children[i].classList.remove('active');
         }

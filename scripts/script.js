@@ -4,7 +4,8 @@ var startersTab = document.getElementById('starters-tab');
 var toppingTab = document.getElementById('topping-tab');
 var toppingMenu = document.getElementById("topping-menu");
 var toppingMenuContent = document.getElementById("toppings-menu-content");
-var halfSelectors
+var halfSelectors;
+var halfSelectorContainers;
 
 toppingTab.onclick = showToppings;
 startersTab.onclick = showStarters;
@@ -29,6 +30,7 @@ function loadComplete(evt){
     }
 
     halfSelectors = document.getElementsByClassName('half-or-whole');
+    halfSelectorContainers = document.getElementsByClassName('half-selection-container');
 
     for(var i = 0; i < halfSelectors.length; i++) {
         halfSelectors[i].onclick = activateHalf;
@@ -54,11 +56,13 @@ function showStarters(evt) {
 }
 
 function activateHalf(evt) {
-    console.log(evt.target);
+    console.log(evt);
     if(!evt.target.classList.contains('active')){
+        for(var i = 0; i < evt.target.parentElement.children.length; i++){
+            evt.target.parentElement.children[i].classList.remove('active');
+        }
         evt.target.classList.add('active');
     } else {
         evt.target.classList.remove('active');
     }
-    console.log(evt.target);
 }

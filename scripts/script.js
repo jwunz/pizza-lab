@@ -1,12 +1,12 @@
 var container = document.getElementById('pizza');
-var buttonNames = ['button-1', 'button-2', 'button-3', 'woo hoo', 'Fred', 'Sally', 'Pepperoni', 'Mushrooms'];
-var buttons = [];
-var containerNames = ['pizza-side', 'menu-side'];
-var pizzaSideContainers = ['pizza-preview', 'receipt-preview'];
-var menuSideContainers = ['starters', 'toppings'];
-var startersContainers = ['pizza-size', 'sauces'];
-var containers = [];
+var starters = document.getElementById('starters');
+var startersTab = document.getElementById('starters-tab');
+var toppingTab = document.getElementById('topping-tab');
+var toppingMenu = document.getElementById("topping-menu");
 var toppingMenuContent = document.getElementById("toppings-menu-content");
+
+toppingTab.onclick = showToppings;
+startersTab.onclick = showStarters;
 
 var toppings;
 var toppingContent;
@@ -37,12 +37,12 @@ function addTopping(){
     pizzaPreview.style.backgroundSize = "100%";
 }
 
+function showToppings(evt) {
+    starters.style.display = 'none';
+    toppingMenu.style.display = 'flex';
+}
 
-
-function removeSimilarToppings(topping){
-    for(var i=0;i<activePizzaToppings.length;i++){
-        if(activePizzaToppings[i].indexOf(topping)>=0){
-            activePizzaToppings.splice(activePizzaToppings[i],1);
-        }
-    }
+function showStarters(evt) {
+    starters.style.display = 'flex';
+    toppingMenu.style.display = 'none';
 }

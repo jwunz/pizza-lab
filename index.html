@@ -19,59 +19,65 @@
         </div>
         <div class="menu-side">
             <div class="menu-tabs">
-                <div class="menu-tab starters-tab">Starters</div>
-                <div class="menu-tab toppings-tab">Toppings</div>
+                <div class="menu-tab starters-tab" id="starters-tab">Starters</div>
+                <div class="menu-tab toppings-tab" id="topping-tab">Toppings</div>
             </div>
-            <div class="menu-section preset-menu">
-                <div class="menu-section-header">Preset Pizzas</div>
-                <div class="menu-section-content">
-                    <div class="preset-pizza pepperoni">
-                        <img class="preset-pizza-img"></img>
-                        <div class="pizza-name">Pepperoni</div>
+            <div class="starters" id="starters">
+                <div class="menu-section preset-menu">
+                    <div class="menu-section-header">Preset Pizzas</div>
+                    <div class="menu-section-content">
+                        <div class="preset-pizza pepperoni">
+                            <img class="preset-pizza-img"></img>
+                            <div class="pizza-name">Pepperoni</div>
+                        </div>
+                        <div class="preset-pizza four-cheese">
+                            <img class="preset-pizza-img"></img>
+                            <div class="pizza-name">Four Cheese</div>
+                        </div>
+                        <div class="preset-pizza hawaiian">
+                            <img class="preset-pizza-img"></img>
+                            <div class="pizza-name">Hawaiian</div>
+                        </div>
+                        <div class="preset-pizza carnivore">
+                            <img class="preset-pizza-img"></img>
+                            <div class="pizza-name">Carnivore</div>
+                        </div>
+                        <div class="preset-pizza rabbit-food">
+                            <img class="preset-pizza-img"></img>
+                            <div class="pizza-name">Rabbit Food</div>
+                        </div>
                     </div>
-                    <div class="preset-pizza four-cheese">
-                        <img class="preset-pizza-img"></img>
-                        <div class="pizza-name">Four Cheese</div>
+                </div>
+                <div class="menu-section sizes-menu">
+                    <div class="menu-section-header">Crust Size</div>
+                    <div class="menu-section-content">
+                        <div class="crust-size personal">
+                            <div class="size-text">Personal</div>
+                        </div>
+                        <div class="crust-size small">
+                            <div class="size-text">Small</div>
+                        </div>
+                        <div class="crust-size medium">
+                            <div class="size-text">Medium</div>
+                        </div>
+                        <div class="crust-size large">
+                            <div class="size-text">Large</div>
+                        </div>
                     </div>
-                    <div class="preset-pizza hawaiian">
-                        <img class="preset-pizza-img"></img>
-                        <div class="pizza-name">Hawaiian</div>
-                    </div>
-                    <div class="preset-pizza carnivore">
-                        <img class="preset-pizza-img"></img>
-                        <div class="pizza-name">Carnivore</div>
-                    </div>
-                    <div class="preset-pizza rabbit-food">
-                        <img class="preset-pizza-img"></img>
-                        <div class="pizza-name">Rabbit Food</div>
+                </div>
+                <div class="menu-section cheese-menu">
+                    <div class="menu-section-header">Cheese</div>
+                    <div class="menu-section-content">
+                        <div class="extra-cheese-label">Extra: </div>
+                        <div class="half-selection-container">
+                            <div class="half-or-whole left-half-btn"></div>
+                            <div class="half-or-whole whole-btn"></div>
+                            <div class="half-or-whole right-half-btn"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="menu-section sizes-menu">
-                <div class="menu-section-header">Crust Size</div>
-                <div class="menu-section-content">
-                    <div class="crust-size personal">
-                        <div class="size-text">Personal</div>
-                    </div>
-                    <div class="crust-size small">
-                        <div class="size-text">Small</div>
-                    </div>
-                    <div class="crust-size medium">
-                        <div class="size-text">Medium</div>
-                    </div>
-                    <div class="crust-size large">
-                        <div class="size-text">Large</div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-section cheese-menu">
-                <div class="menu-section-header">Cheese</div>
-                <div class="menu-section-content">
-                    <div class="extra-cheese-label">Extra: </div>
-                    <div class="half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div>
-                </div>
-            </div>
-            <div class="menu-section toppings-menu">
+            <div class="menu-section toppings-menu hidden" id="topping-menu">
                 <div class="menu-section-header">Toppings</div>
                 <div class="menu-section-content" id="toppings-menu-content">
                 </div>

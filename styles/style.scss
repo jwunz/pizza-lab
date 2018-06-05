@@ -71,6 +71,13 @@ html, body {
     cursor: pointer;
 }
 
+.starters {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
 .menu-section {
     display: flex;
     flex-direction: column;

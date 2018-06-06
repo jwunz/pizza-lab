@@ -5,6 +5,7 @@ var toppingTab = document.getElementById('topping-tab');
 var toppingMenu = document.getElementById("topping-menu");
 var toppingMenuContent = document.getElementById("toppings-menu-content");
 var pizzaPreview = document.getElementsByClassName('pizza-preview')[0];
+var presetMenu = document.getElementById('preset-menu');
 var halfSelectors;
 var halfSelectorContainers;
 var activePizzaToppings;
@@ -16,6 +17,8 @@ startersTab.onclick = showStarters;
 var toppings;
 var toppingContent;
 var crust;
+var presets;
+var preset;
 var request = new XMLHttpRequest();
 loadData();
 
@@ -32,7 +35,7 @@ function loadComplete(evt){
     crust = toppingContent.crust[0];
     var cheese = toppingContent.cheese[0];
     for(i = 0; i < toppings.length; i++) {
-        toppingMenuContent.innerHTML += `<div class="topping ${toppings[i].name}"> <div class="topping-display"> <img class="topping-img" src="../images/${toppings[i].thumbnail}"/>  <div class="topping-text">${toppings[i].name}</div> </div> <div class="topping-controls"> <div class="topping-control-label">Regular</div> <div class="half-selection-container regular-half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div><div class="topping-control-label">Extra</div> <div class="half-selection-container extra-half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div> </div> </div >`;
+        toppingMenuContent.innerHTML += `<div class="topping ${toppings[i].name} ${toppings[i].id}"> <div class="topping-display"> <img class="topping-img" src="../images/${toppings[i].thumbnail}"/>  <div class="topping-text">${toppings[i].name}</div> </div> <div class="topping-controls"> <div class="topping-control-label">Regular</div> <div class="half-selection-container regular-half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div><div class="topping-control-label">Extra</div> <div class="half-selection-container extra-half-selection-container"> <div class="half-or-whole left-half-btn"></div> <div class="half-or-whole whole-btn"></div> <div class="half-or-whole right-half-btn"></div> </div> </div> </div >`;
     }
     
     pizzaPreview.style.background = `url(../images/${cheese.image}) no-repeat, url(../images/${crust.image[0]}) no-repeat, url(../images/${crust.image[1]}) no-repeat`;
@@ -46,6 +49,20 @@ function loadComplete(evt){
     }
     for(var i = 0; i < toppingClickables.length; i++) {
         toppingClickables[i].onclick = toppingClick;
+    }
+
+    presets = toppingContent.presets;
+
+    presetMenu.innerHTML += `
+        <div class="menu-section-header">Preset Pizzas</div>
+        <div class="menu-section-content"></div>`;
+
+    for(var i = 0; i < presets.length; i++) {
+        presetMenu.children[1].innerHTML += `
+            <div class="preset-pizza ${presets[i].id}">
+                <img class="preset-pizza-img"></img>
+                <div class="pizza-name">${presets[i].name}</div>
+            </div>`
     }
 }
 

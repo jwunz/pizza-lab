@@ -2,6 +2,7 @@
     "toppings": [
         {
             "name": "Bacon",
+            "id": "bacon",
             "thumbnail": "bacon_thumbnail.png",
             "regular": "bacon_regular.png",
             "regular-left": "bacon_regular_left.png",
@@ -12,6 +13,7 @@
         },
         {
             "name": "Beef",
+            "id": "beef",
             "thumbnail": "beef_thumbnail.png",
             "regular": "beef_regular.png",
             "regular-left": "beef_regular_left.png",
@@ -22,6 +24,7 @@
         },
         {
             "name": "Bell Pepper",
+            "id": "bell-pepper",
             "thumbnail": "bell_pepper_thumbnail.png",
             "regular": "bell_pepper_regular.png",
             "regular-left": "bell_pepper_regular_left.png",
@@ -32,6 +35,7 @@
         },
         {
             "name": "Chicken",
+            "id": "chicken",
             "thumbnail": "chicken_thumbnail.png",
             "regular": "chicken_regular.png",
             "regular-left": "chicken_regular_left.png",
@@ -42,6 +46,7 @@
         },
         {
             "name": "Ham",
+            "id": "ham",
             "thumbnail": "ham_thumbnail.png",
             "regular": "ham_regular.png",
             "regular-left": "ham_regular_left.png",
@@ -52,6 +57,7 @@
         },
         {
             "name": "Jalape&ntilde;o",
+            "id": "jalapeno",
             "thumbnail": "jalapeno_thumbnail.png",
             "regular": "jalapeno_regular.png",
             "regular-left": "jalapeno_regular_left.png",
@@ -62,6 +68,7 @@
         },
         {
             "name": "Mushroom",
+            "id": "mushrooms",
             "thumbnail": "mushrooms_thumbnail.png",
             "regular": "mushrooms_regular.png",
             "regular-left": "mushrooms_regular_left.png",
@@ -72,6 +79,7 @@
         },
         {
             "name": "Black Olive",
+            "id": "olive",
             "thumbnail": "olives_thumbnail.png",
             "regular": "black_olive_regular.png",
             "regular-left": "black_olive_regular_left.png",
@@ -82,6 +90,7 @@
         },
         {
             "name": "Pepperoni",
+            "id": "pepperoni",
             "thumbnail": "pepperoni_thumbnail.png",
             "regular": "pepperoni_regular.png",
             "regular-left": "pepperoni_regular_left.png",
@@ -92,6 +101,7 @@
         },
         {
             "name": "Red Pepper",
+            "id": "red-pepper",
             "thumbnail": "red_pepper_thumbnail.png",
             "regular": "red_pepper_regular.png",
             "regular-left": "red_pepper_regular_left.png",
@@ -117,6 +127,7 @@
     "presets": [
         {
             "name": "Pepperoni",
+            "id": "pepperoni",
             "cheese": "regular",
             "toppings": [
                 "pepperoni"
@@ -124,11 +135,13 @@
         },
         {
             "name": "Cheese",
+            "id": "cheese",
             "cheese": "extra",
             "toppings": []
         },
         {
             "name": "Carnivore",
+            "id": "carnivore",
             "cheese": "regular",
             "toppings": [
                 "pepperoni",
@@ -140,12 +153,30 @@
         },
         {
             "name": "Rabbit Food",
+            "id": "rabbit-food",
             "cheese": "regular",
             "toppings": [
                 "bell-pepper",
                 "jalepeno",
                 "mushrooms",
                 "olive",
+                "red-pepper"
+            ]
+        },
+        {
+            "name": "Top This",
+            "id": "top-this",
+            "cheese": "regular",
+            "toppings": [
+                "bacon",
+                "beef",
+                "bell-pepper",
+                "chicken",
+                "ham",
+                "jalepe&ntilde;o",
+                "mushroom",
+                "olive",
+                "pepperoni",
                 "red-pepper"
             ]
         }

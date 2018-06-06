@@ -25,7 +25,6 @@ var request = new XMLHttpRequest();
 loadData();
 
 
-
 function loadData() {
     request.open('GET', '../data/toppings.json');
     request.onload = loadComplete;
@@ -269,4 +268,18 @@ function presetClicked(evt) {
         listItem.innerHTML += activePizzaToppings[i].replace('url(../images/', "").replace('.png) no-repeat', "");
         receipt.appendChild(listItem);
     }
+}
+var addToCart = document.createElement('button');
+addToCart.innerHTML = "Add To Cart";
+addToCart.style.width = '140px';
+addToCart.style.height = '80px';
+addToCart.style.background = "#fff";
+addToCart.style.border = "solid 2px #000";
+addToCart.style.borderRadius = "15px";
+addToCart.addEventListener('click', addPizza);
+toppingMenu.appendChild(addToCart)
+
+function addPizza(evt){
+    var ingList = receipt.children.innerHTML;
+    return ingList;
 }

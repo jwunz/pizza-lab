@@ -8,6 +8,7 @@ var pizzaPreview = document.getElementsByClassName('pizza-preview')[0];
 var halfSelectors;
 var halfSelectorContainers;
 var activePizzaToppings;
+var toppingClickables;
 
 toppingTab.onclick = showToppings;
 startersTab.onclick = showStarters;
@@ -38,9 +39,13 @@ function loadComplete(evt){
     pizzaPreview.style.backgroundSize = 'cover';
     halfSelectors = document.getElementsByClassName('half-or-whole');
     halfSelectorContainers = document.getElementsByClassName('half-selection-container');
+    toppingClickables = document.getElementsByClassName('topping-display');
 
     for(var i = 0; i < halfSelectors.length; i++) {
         halfSelectors[i].onclick = activateHalf;
+    }
+    for(var i = 0; i < toppingClickables.length; i++) {
+        toppingClickables[i].onclick = toppingClick;
     }
 }
 
@@ -55,14 +60,19 @@ function addTopping(evt){
 function showToppings(evt) {
     starters.classList.add('hidden');
     toppingMenu.classList.remove('hidden');
+    startersTab.classList.remove('active');
+    toppingTab.classList.add('active');
 }
 
 function showStarters(evt) {
     starters.classList.remove('hidden');
     toppingMenu.classList.add('hidden');
+    startersTab.classList.add('active');
+    toppingTab.classList.remove('active');
 }
 
 function activateHalf(evt) {
+    console.log(evt);
     if(!evt.target.classList.contains('active')){
         if(evt.target.parentElement.classList.contains('regular-half-selection-container')) {
             if (evt.target.classList.contains('whole-btn')) {
@@ -116,6 +126,28 @@ function activateHalf(evt) {
     } else {
         deactivate(evt.target);
     }
+}
+
+function toppingClick(evt) {
+    console.log(evt);
+    var greatGrandchildren1 = evt.target.parentElement;
+    var greatGrandchildren2 = evt.target.parentElement;
+
+    while (!greatGrandchildren1.classList.contains('topping')){
+        greatGrandchildren1 = greatGrandchildren1.parentElement;
+        greatGrandchildren2 = greatGrandchildren2.parentElement;
+    }
+
+    greatGrandchildren1 = greatGrandchildren1.children[1].children[1].children;
+    greatGrandchildren2 = greatGrandchildren2.children[1].children[3].children;
+
+    for(var i = 0; i < greatGrandchildren1.length; i++){
+        if(greatGrandchildren1[i].classList.contains('active') || greatGrandchildren2[i].classList.contains('active')){
+            deactivateArray(greatGrandchildren1);
+            return(deactivateArray(greatGrandchildren2));
+        }
+    }
+    activate(greatGrandchildren1[1]);
 }
 
 function activate(element) {

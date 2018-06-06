@@ -238,5 +238,22 @@ html, body {
 @media only screen and (max-device-width: 480px) {
     .page-content{
          flex-direction: column;
+         width: 100%;
+    }
+    .pizza-content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .menu-section-content{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        >div{
+            margin: 3px;
+        }
+    }
+    .menu-side{
+        width: 100%;
     }
 }

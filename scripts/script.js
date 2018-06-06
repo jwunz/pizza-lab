@@ -6,6 +6,7 @@ var toppingMenu = document.getElementById("topping-menu");
 var toppingMenuContent = document.getElementById("toppings-menu-content");
 var pizzaPreview = document.getElementsByClassName('pizza-preview')[0];
 var presetMenu = document.getElementById('preset-menu');
+var receipt = document.getElementsByClassName('itemized')[0];
 var halfSelectors;
 var halfSelectorContainers;
 var activePizzaToppings = [];
@@ -71,14 +72,6 @@ function loadComplete(evt) {
     for (var i = 0; i < presets.length; i++) {
         document.getElementById(presets[i].id).onclick = presetClicked;
     }
-}
-
-
-function addTopping(evt) {
-    removeSimilarToppings(evt);
-    activePizzaToppings.unshift(`url(../images/${evt}.png) no-repeat`);
-    pizzaPreview.style.background = activePizzaToppings + ", url(../images/regular_crust.png) no-repeat, url(../images/crust_background.png) no-repeat";
-    pizzaPreview.style.backgroundSize = "100%";
 }
 
 function showToppings(evt) {
@@ -170,50 +163,43 @@ function toppingClick(evt) {
         }
     }
     activate(greatGrandchildren1[1]);
+    
+    
 }
 
 function activate(element) {
     element.classList.add('active');
     var topp = element.parentElement.parentElement.parentElement.classList[1];
-    console.log(topp);
     var picturePath = findPicturePath(element);
     var topp2 = topp.toLowerCase();
-    topp2 = topp2.replace(new RegExp(/ñ/g),"n");
+    topp2 = topp2.replace(new RegExp(/ñ/g), "n");
     activePizzaToppings.unshift(`url(../images/${topp2}${picturePath}.png) no-repeat`);
-    console.log(activePizzaToppings);
     pizzaPreview.style.background = activePizzaToppings;
-    pizzaPreview.style.backgroundSize = "cover";
-}
-
-function deactivate(element) {
-    if(element.classList.contains('active')){
-        element.classList.remove('active');
-        var topp = element.parentElement.parentElement.parentElement.classList[1];
-        var picturePath = findPicturePath(element);
-        var topp2 = topp.toLowerCase();
-        topp2 = topp2.replace(new RegExp(/ñ/g),"n");
-        var index = activePizzaToppings.indexOf(`url(../images/${topp2}${picturePath}.png) no-repeat`);
-        activePizzaToppings.splice(index,1);
-        pizzaPreview.style.background = activePizzaToppings;
-        pizzaPreview.style.backgroundSize = "cover";
+    pizzaPreview.style.backgroundSize = "cover";receipt.innerHTML = "";
+    for (var i = 0; i < activePizzaToppings.length - 1; i++) {
+        var listItem = document.createElement('li');
+        listItem.innerHTML += activePizzaToppings[i].replace('url(../images/', "").replace('.png) no-repeat', "");
+        receipt.appendChild(listItem);
     }
 }
 
 function deactivate(element) {
     if (element.classList.contains('active')) {
-
         element.classList.remove('active');
-
-        if (!element.parentElement.classList.contains('cheese-container')) {
-            var topp = element.parentElement.parentElement.parentElement.classList[1];
-            var picturePath = findPicturePath(element);
-            var topp2 = topp.toLowerCase();
-            var index = activePizzaToppings.indexOf(`url(../images/${topp2}${picturePath}.png) no-repeat`);
-            activePizzaToppings.splice(index, 1);
-            console.log(activePizzaToppings);
-            pizzaPreview.style.background = activePizzaToppings;
-            pizzaPreview.style.backgroundSize = "cover";
-        }
+        var topp = element.parentElement.parentElement.parentElement.classList[1];
+        var picturePath = findPicturePath(element);
+        var topp2 = topp.toLowerCase();
+        topp2 = topp2.replace(new RegExp(/ñ/g), "n");
+        var index = activePizzaToppings.indexOf(`url(../images/${topp2}${picturePath}.png) no-repeat`);
+        activePizzaToppings.splice(index, 1);
+        pizzaPreview.style.background = activePizzaToppings;
+        pizzaPreview.style.backgroundSize = "cover";
+        receipt.innerHTML = "";
+    for (var i = 0; i < activePizzaToppings.length - 1; i++) {
+        var listItem = document.createElement('li');
+        listItem.innerHTML += activePizzaToppings[i].replace('url(../images/', "").replace('.png) no-repeat', "");
+        receipt.appendChild(listItem);
+    }
     }
 }
 
@@ -224,33 +210,31 @@ function deactivateArray(arr) {
 }
 
 
-function findPicturePath(element){
+function findPicturePath(element) {
     var picturePath = '';
-    console.log(picturePath);
-    switch(element.parentElement.parentElement.parentElement.classList[1]){
-        case('Black'):
+    switch (element.parentElement.parentElement.parentElement.classList[1]) {
+        case ('Black'):
             picturePath += '_olive';
             break;
-        case('Bell'):
+        case ('Bell'):
             picturePath += '_pepper';
             break;
-        case('Red'):
+        case ('Red'):
             picturePath += '_pepper';
             break;
 
     }
     var parentClassName = element.parentElement.classList[1];
-    console.log(parentClassName);
-    if(parentClassName.includes('regular')){
-        picturePath+="_regular";
-        if(element.classList[1].includes('left')) picturePath+="_left";
-        else if(element.classList[1].includes('right')) picturePath+="_right";
+    if (parentClassName.includes('regular')) {
+        picturePath += "_regular";
+        if (element.classList[1].includes('left')) picturePath += "_left";
+        else if (element.classList[1].includes('right')) picturePath += "_right";
         return picturePath;
     }
-    else if(parentClassName.includes('extra')){
-        picturePath+="_extra";
-        if(element.classList[1].includes('left')) picturePath+="_left";
-        else if(element.classList[1].includes('right')) picturePath+="_right";
+    else if (parentClassName.includes('extra')) {
+        picturePath += "_extra";
+        if (element.classList[1].includes('left')) picturePath += "_left";
+        else if (element.classList[1].includes('right')) picturePath += "_right";
         return picturePath;
     }
 }
@@ -264,8 +248,8 @@ function presetClicked(evt) {
         if (presets[i].id == evt.target.id || presets[i].id == evt.target.parentElement.id) {
             toppingList = presets[i].toppings;
             if (presets[i].cheese == 'extra') {
-                var cheesey = document.getElementById('extra-cheese-whole');
-                activate(cheesey);
+                // var cheesey = document.getElementById('extra-cheese-whole');
+                // activate(cheesey);
             }
             break;
         }
@@ -278,5 +262,11 @@ function presetClicked(evt) {
                 break;
             }
         }
+    }
+    receipt.innerHTML = "";
+    for (var i = 0; i < activePizzaToppings.length - 1; i++) {
+        var listItem = document.createElement('li');
+        listItem.innerHTML += activePizzaToppings[i].replace('url(../images/', "").replace('.png) no-repeat', "");
+        receipt.appendChild(listItem);
     }
 }

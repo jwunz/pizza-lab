@@ -174,12 +174,26 @@ function toppingClick(evt) {
 
 function activate(element) {
     element.classList.add('active');
-    if (!element.parentElement.classList.contains('cheese-container')) {
+    var topp = element.parentElement.parentElement.parentElement.classList[1];
+    console.log(topp);
+    var picturePath = findPicturePath(element);
+    var topp2 = topp.toLowerCase();
+    topp2 = topp2.replace(new RegExp(/ñ/g),"n");
+    activePizzaToppings.unshift(`url(../images/${topp2}${picturePath}.png) no-repeat`);
+    console.log(activePizzaToppings);
+    pizzaPreview.style.background = activePizzaToppings;
+    pizzaPreview.style.backgroundSize = "cover";
+}
+
+function deactivate(element) {
+    if(element.classList.contains('active')){
+        element.classList.remove('active');
         var topp = element.parentElement.parentElement.parentElement.classList[1];
         var picturePath = findPicturePath(element);
         var topp2 = topp.toLowerCase();
-        activePizzaToppings.unshift(`url(../images/${topp2}${picturePath}.png) no-repeat`);
-        console.log(activePizzaToppings);
+        topp2 = topp2.replace(new RegExp(/ñ/g),"n");
+        var index = activePizzaToppings.indexOf(`url(../images/${topp2}${picturePath}.png) no-repeat`);
+        activePizzaToppings.splice(index,1);
         pizzaPreview.style.background = activePizzaToppings;
         pizzaPreview.style.backgroundSize = "cover";
     }
@@ -210,19 +224,33 @@ function deactivateArray(arr) {
 }
 
 
-function findPicturePath(element) {
-    var picturePath;
+function findPicturePath(element){
+    var picturePath = '';
+    console.log(picturePath);
+    switch(element.parentElement.parentElement.parentElement.classList[1]){
+        case('Black'):
+            picturePath += '_olive';
+            break;
+        case('Bell'):
+            picturePath += '_pepper';
+            break;
+        case('Red'):
+            picturePath += '_pepper';
+            break;
+
+    }
     var parentClassName = element.parentElement.classList[1];
-    if (parentClassName.includes('regular')) {
-        picturePath = "_regular";
-        if (element.classList[1].includes('left')) picturePath += "_left";
-        else if (element.classList[1].includes('right')) picturePath += "_right";
+    console.log(parentClassName);
+    if(parentClassName.includes('regular')){
+        picturePath+="_regular";
+        if(element.classList[1].includes('left')) picturePath+="_left";
+        else if(element.classList[1].includes('right')) picturePath+="_right";
         return picturePath;
     }
-    else if (parentClassName.includes('extra')) {
-        picturePath = "_extra";
-        if (element.classList[1].includes('left')) picturePath += "_left";
-        else if (element.classList[1].includes('right')) picturePath += "_right";
+    else if(parentClassName.includes('extra')){
+        picturePath+="_extra";
+        if(element.classList[1].includes('left')) picturePath+="_left";
+        else if(element.classList[1].includes('right')) picturePath+="_right";
         return picturePath;
     }
 }

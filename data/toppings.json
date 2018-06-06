@@ -127,7 +127,7 @@
     "presets": [
         {
             "name": "Pepperoni",
-            "id": "pepperoni",
+            "id": "pepperoni-preset",
             "cheese": "regular",
             "toppings": [
                 "pepperoni"
@@ -135,7 +135,7 @@
         },
         {
             "name": "Cheese",
-            "id": "cheese",
+            "id": "cheese-preset",
             "cheese": "extra",
             "toppings": []
         },
@@ -178,7 +178,7 @@
                 "olive",
                 "pepperoni",
                 "red-pepper"
-            ]
+            ] 
         }
     ]
 }

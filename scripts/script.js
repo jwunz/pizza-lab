@@ -45,6 +45,7 @@ function loadComplete(evt){
     halfSelectors = document.getElementsByClassName('half-or-whole');
     halfSelectorContainers = document.getElementsByClassName('half-selection-container');
     toppingClickables = document.getElementsByClassName('topping-display');
+    var thing = presetClicked;
     
     for(var i = 0; i < halfSelectors.length; i++) {
         halfSelectors[i].onclick = activateHalf;
@@ -60,11 +61,16 @@ function loadComplete(evt){
         <div class="menu-section-content"></div>`;
 
     for(var i = 0; i < presets.length; i++) {
+        if(i > 0)console.log(document.getElementById(presets[0].id).onclick);
         presetMenu.children[1].innerHTML += `
-            <div class="preset-pizza ${presets[i].id}">
+            <div class="preset-pizza" id="${presets[i].id}">
                 <img class="preset-pizza-img"></img>
                 <div class="pizza-name">${presets[i].name}</div>
-            </div>`
+            </div>`;
+    }
+    
+    for(var i = 0; i < presets.length; i++) {
+        document.getElementById(presets[i].id).onclick = presetClicked;
     }
 }
 
@@ -214,5 +220,20 @@ function findPicturePath(element){
         if(element.classList[1].includes('left')) picturePath+="_left";
         else if(element.classList[1].includes('right')) picturePath+="_right";
         return picturePath;
+    }
+}
+
+function presetClicked(evt) {
+    var toppingList = [];
+
+    for (var i = 0; i < presets.length; i++) {
+        if (presets[i].id == evt.target.id || presets[i].id == evt.parentElement.target.id) {
+            toppingList = presets[i].toppings;
+            break;
+        }
+    }
+
+    for (var i = 0; i < toppingList.length; i++) {
+        //
     }
 }
